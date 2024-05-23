@@ -1,0 +1,259 @@
+.kategori {
+    display: flex;
+    gap: 10px;
+}
+
+.kategori a {
+    color: rgb(0, 139, 254);
+    padding: 8px 15px;
+    border: 1px solid rgb(0, 139, 254);
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.kategori a:hover {
+    background-color: rgb(244, 175, 27);
+    border: 1px solid rgb(0, 139, 254, 0);
+    color: white;
+}
+
+.kategori a.kategori-aktif {
+    background-color: rgb(244, 175, 27);
+    border: 1px solid rgb(0, 139, 254, 0);
+    color: white;
+}
+
+.pembungkus-mentor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pembungkus-mentor .kotak {
+    flex-basis: 32%;
+    border: 1px solid rgba(100, 100, 111, 0.2);
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.pembungkus-mentor .kotak:hover {
+    border: 1px solid rgb(0, 139, 254);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.pembungkus-mentor a:hover {
+    background-color: rgb(54, 151, 211);
+}
+.pembungkus-mentor .kotak {
+    display: flex;
+    flex-direction: column;
+}
+
+.pembungkus-mentor .kotak-deskripsi {
+    color: rgb(91, 91, 91);
+    margin-bottom: 5px;
+    text-align: left;
+}
+.pembungkus-mentor .kotak .kotak-atas {
+    display: flex;
+    flex-direction: row;
+}
+
+.pembungkus-mentor .kotak .kotak-atas img {
+    min-width: 120px;
+    width: 120px;
+    height: 120px;
+    min-height: 120px;
+    object-fit: cover;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.pembungkus-mentor .text-kotak {
+    color: rgb(91, 91, 91);
+}
+
+.pembungkus-mentor .text-kotak h2 {
+    font-size: 25px;
+    text-align: left;
+}
+
+.pembungkus-mentor .text-kotak p {
+    margin-bottom: 5px;
+    text-align: left;
+}
+.pembungkus-mentor .kotak .medsos-mentor {
+    width: 100%;
+    padding: 0px;
+    background-color: rgb(247, 248, 249);
+    box-shadow: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: auto auto 0px auto;
+}
+
+.pembungkus-mentor .kotak .medsos-mentor a {
+    text-align: center;
+
+    background-color: rgb(247, 248, 249);
+    border-radius: 20px;
+    transition: 0.3s;
+    padding: 8px 0px;
+    width: 45%;
+    border: 1px solid rgba(100, 100, 111, 0.2);
+    color: rgb(91, 91, 91);
+    font-size: 13px;
+}
+
+.pembungkus-mentor .kotak .medsos-mentor a:hover {
+    border: 1px solid rgb(54, 151, 211);
+    color: rgb(54, 151, 211);
+}
+
+.pembungkus-mentor .kotak .medsos-mentor a i {
+    padding-right: 5px;
+}
+.profesi p {
+    font-size: 12px;
+    color: rgb(54, 151, 211);
+}
+
+.tooltip .tooltiptext {
+    visibility: visible;
+    background-color: rgba(244, 175, 27, 0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    justify-content: center;
+    font-size: 12px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.tooltip:hover .tooltiptext {
+    opacity: 1;
+}
+
+.kotak-deskripsi p {
+    font-size: 13px;
+    margin: 0px 10px 10px 10px;
+}
+
+@media (max-width: 1115px) {
+    .pembungkus-mentor .kotak {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 950px) {
+    .mentor .text {
+        margin-top: 3vh;
+    }
+}
+
+@media (max-width: 815px) {
+    .pembungkus-mentor .text-kotak h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 730px) {
+    .kategori {
+        max-width: none; /* Hapus batasan lebar maksimum */
+        overflow-x: scroll;
+        white-space: nowrap;
+        gap: 5px;
+    }
+    .kategori a {
+        margin-bottom: 10px;
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    /* .kategori::-webkit-scrollbar {
+        display: none;
+    } */
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    /* .kategori {
+        -ms-overflow-style: none; IE and Edge
+        scrollbar-width: none; Firefox */
+
+    /* Define the thumb style */
+    .kategori::-webkit-scrollbar {
+        width: 10px;
+        height: 5px;
+    }
+
+    .kategori::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+            to bottom right,
+            #4d7fff 0%,
+            rgb(54, 151, 211) 100%
+        );
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+
+    /* Define the track style */
+    .kategori::-webkit-scrollbar-track:horizontal {
+        background-color: rgb(241, 241, 241);
+        box-shadow: inset 0 0 2px 2px rgb(179, 176, 176, 0.1);
+    }
+    .pembungkus-mentor .kotak {
+        flex-basis: 100%;
+    }
+    .pembungkus-mentor {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 565px) {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .kategori::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .kategori {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .kategori {
+        /* max-width: none;
+        overflow-x: auto; 
+        white-space: nowrap; */
+        margin-top: -20px;
+    }
+    .tooltiptext {
+        display: none;
+    }
+
+    .text h1 {
+        font-size: 1.5em;
+    }
+
+    .kategori a {
+        font-size: 12px;
+    }
+
+    .kategori-mentor {
+        padding-top: 3vh;
+    }
+}

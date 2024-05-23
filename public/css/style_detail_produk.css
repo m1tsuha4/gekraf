@@ -1,0 +1,116 @@
+.detail-produk {
+}
+
+.item-detail-produk {
+    display: flex;
+
+    gap: 50px;
+    border: 2px solid rgb(214, 214, 214);
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.gambar-detail-produk {
+}
+
+.gambar-detail-produk img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 2px solid rgb(214, 214, 214);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.judul-sosial-media-produk {
+    margin-bottom: 10px;
+    color: rgb(91, 91, 91);
+    text-align: center;
+}
+
+.sosial-media-detail-produk {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.sosial-media-detail-produk a {
+    padding: 8px 15px;
+    background-color: rgb(54, 151, 211);
+    color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.sosial-media-detail-produk a:hover {
+    background-color: rgb(244, 175, 27);
+}
+
+.owner-detail-produk {
+    display: flex;
+    color: rgb(91, 91, 91);
+    gap: 10px;
+}
+
+.text-tebal {
+    font-weight: bold;
+}
+
+.text-detail-produk {
+}
+
+.judul-detail-produk {
+    display: block;
+    gap: 10px;
+}
+
+.judul-detail-produk p {
+    color: rgb(244, 175, 27);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.judul-detail-produk h1 {
+    font-size: 3em;
+    color: rgb(91, 91, 91);
+}
+
+hr {
+    border: 1px solid rgb(214, 214, 214);
+    width: 70%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.deskripsi-detail-produk {
+    color: rgb(91, 91, 91);
+}
+
+.alamat-detail-produk {
+    display: flex;
+    margin-top: 20px;
+    color: rgb(91, 91, 91);
+}
+
+.beli-detail-produk {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.beli-detail-produk a {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(54, 151, 211);
+    color: white;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+.beli-detail-produk a:hover {
+    background-color: rgb(244, 175, 27);
+}

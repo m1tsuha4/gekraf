@@ -1,0 +1,791 @@
+body {
+    background-color: rgb(247, 248, 249);
+}
+
+.background-2 {
+    background-color: white;
+}
+
+.background {
+    background-color: rgb(54, 151, 211);
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    position: absolute;
+    border-radius: 0px 0px 30px 30px;
+}
+
+.dot {
+    background-color: white;
+    opacity: 10%;
+    width: 1000px;
+    position: absolute;
+    height: 1000px;
+    border-radius: 50%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.dot-2 {
+    background-color: white;
+    opacity: 10%;
+    width: 600px;
+    position: absolute;
+    height: 600px;
+    border-radius: 50%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.header {
+    display: flex;
+    margin-top: 170px;
+    justify-content: space-between;
+}
+
+.header .header-text {
+    flex-basis: 50%;
+    margin-top: 50px;
+}
+
+.header .header-text h1 {
+    color: white;
+    letter-spacing: 0.8px;
+    font-size: 2.3em;
+}
+
+.header .header-text p {
+    color: white;
+    letter-spacing: 0.8px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.header .header-text a {
+    padding: 8px 18px;
+    background-color: rgb(244, 175, 27);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+.header .header-text a:hover {
+    background-color: rgb(17, 109, 167);
+}
+
+.header .gambar {
+    flex-basis: 40%;
+}
+
+.gambar .cover-gambar {
+
+    width: 450px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+
+}
+
+.gambar .cover-gambar img {
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+}
+
+/* sosial-media */
+
+.sosial-media {
+    display: flex;
+    width: 400px;
+    height: auto;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 100px auto 00px auto;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.sosial-media a {
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px 16px;
+    background-color: rgb(244, 175, 27);
+    border-radius: 30px;
+    color: white;
+    font-size: 1.3em;
+    transition: 0.3s;
+}
+
+.sosial-media a:hover {
+    background-color: rgb(54, 151, 211);
+}
+
+/* about-us */
+
+.about-us {
+    display: flex;
+}
+
+.about-us .gambar .cover-gambar {
+    width: 500px;
+    height: auto;
+}
+
+/* market */
+.market {
+    display: flex;
+}
+
+.market .pembungkus {
+    flex-basis: 50%;
+    display: grid;
+    grid-template-areas:
+        "kotak kotak kotak"
+        "kotak kotak kotak";
+    gap: 10px;
+    padding: 0px 20px 0px 20px;
+}
+
+.market .pembungkus .kotak {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(100, 100, 111, 0.2);
+    border-radius: 20px;
+    transition: 0.3s;
+    padding: 10px;
+}
+.market .pembungkus .kotak:hover {
+    border: 2px solid rgba(244, 175, 27);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.market .pembungkus .kotak img {
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.market .pembungkus .kotak p {
+    margin-bottom: 10px;
+    color: rgb(91, 91, 91);
+    text-align: center;
+}
+
+/* produk */
+.produk {
+}
+
+.teks-dan-slide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slide-buttons {
+    display: flex;
+    margin: 0px 0px 20px auto;
+    gap: 5px;
+}
+
+.teks-dan-slide h3 {
+    color: rgb(91, 91, 91);
+}
+
+.slide-button {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.slide-buttons button {
+    background-color: rgb(54, 151, 211);
+    border: 1px solid rgb(17, 109, 167, 0);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: rgb(247, 248, 249);
+}
+
+.slide-buttons button:hover {
+    border: 1px solid rgb(17, 109, 167);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.produk .text h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pembungkus-market {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    max-width: none;
+    overflow-x: scroll;
+    white-space: normal;
+    position: relative;
+}
+
+.pembungkus-market::-webkit-scrollbar {
+    width: 0;
+    height: 8px; /* Sesuaikan dengan lebar scrollbar yang Anda inginkan */
+}
+
+.pembungkus-market::-webkit-scrollbar-thumb {
+    background: transparent; /* Menghilangkan warna latar belakang thumb scrollbar */
+}
+
+.pembungkus-market .kotak {
+    /* flex-basis: 32%; */
+    border: 1px solid rgba(100, 100, 111, 0.2);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.3s;
+    background-color: rgb(247, 248, 249);
+    flex: 0 0 250px;
+    max-width: 100%;
+}
+
+.pembungkus-market .kotak:hover {
+    border: 1px solid rgb(0, 139, 254);
+}
+
+.pembungkus-market a {
+    text-align: center;
+
+    background-color: rgb(247, 248, 249);
+    border-radius: 20px;
+    transition: 0.2s;
+    padding: 8px 0px;
+    width: 100%;
+    border: 1px solid rgb(54, 151, 211);
+    color: rgb(91, 91, 91);
+    font-size: 13px;
+    margin: auto auto 0px auto;
+}
+
+.pembungkus-market a:hover {
+    background-color: rgb(54, 151, 211);
+    color: white;
+}
+
+.pembungkus-market .kotak-deskripsi {
+    color: rgb(91, 91, 91);
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.pembungkus-market .kotak img {
+    min-width: 120px;
+    width: 100%;
+    height: 200px;
+    min-height: 120px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.pembungkus-market .text-kotak {
+    color: rgb(91, 91, 91);
+}
+
+.pembungkus-market .text-kotak h2 {
+    font-size: 20px;
+    text-align: left;
+}
+
+.pembungkus-market .text-kotak p {
+    margin-bottom: 5px;
+    text-align: left;
+}
+.pembungkus-market .kotak .medsos-mentor {
+    width: 100%;
+    padding: 0px;
+    background-color: rgb(247, 248, 249);
+    box-shadow: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: auto auto 0px auto;
+}
+
+.pembungkus-market .kotak .medsos-mentor a {
+    text-align: center;
+
+    background-color: rgb(247, 248, 249);
+    border-radius: 20px;
+    transition: 0.3s;
+    padding: 8px 0px;
+    width: 45%;
+    border: 1px solid rgba(100, 100, 111, 0.2);
+    color: rgb(91, 91, 91);
+    font-size: 13px;
+}
+
+.pembungkus-market .kotak .medsos-mentor a:hover {
+    border: 1px solid rgb(54, 151, 211);
+    color: rgb(54, 151, 211);
+}
+
+.pembungkus-market .kotak .medsos-mentor a i {
+    padding-right: 5px;
+}
+
+.pembungkus-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pembungkus-2 .kotak {
+    flex-basis: 32%;
+    border: 1px solid rgba(100, 100, 111, 0.2);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.pembungkus-2 .kotak:hover {
+    border: 2px solid rgba(244, 175, 27);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.pembungkus-2 .text-kotak {
+    color: rgb(91, 91, 91);
+    width: 90%;
+}
+
+.pembungkus-2 .text-kotak h2 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.pembungkus-2 a {
+    text-align: center;
+    padding: 6px 0px 6px 0px;
+    color: white;
+    background-color: rgb(244, 175, 27);
+    border-radius: 20px;
+    /* margin-top: 15px; */
+    width: 100%;
+    transition: 0.3s;
+    margin: 15px auto 0px auto;
+}
+
+.pembungkus-2 a:hover {
+    background-color: rgb(54, 151, 211);
+}
+
+.pembungkus-2 .kotak img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.pembungkus-2 .text-kotak p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Add margin bottom for spacing between paragraphs */
+}
+
+.pembungkus-2 .text-kotak i {
+    margin-right: 8px; /* Add margin right for spacing between icon and text */
+}
+
+/* ahli */
+
+.ahli {
+    background-color: rgb(54, 151, 211);
+    border-radius: 30px;
+    padding: 50px;
+    margin-top: 100px;
+}
+
+.kelompok {
+    display: grid;
+    grid-template-areas:
+        "judul ikon ikon"
+        "paragraf ikon ikon"
+        "paragraf ikon ikon"
+        "paragraf ikon ikon"
+        "paragraf ikon ikon";
+}
+
+.ahli .judul {
+    grid-area: judul;
+    color: white;
+    font-size: 1.7em;
+}
+
+.ahli .paragraf {
+    grid-area: paragraf;
+    color: white;
+    font-size: 1.2em;
+    text-align: justify;
+    width: 80%;
+    letter-spacing: 1px;
+}
+
+.ahli .ikon {
+    grid-area: ikon;
+    display: grid;
+    grid-template-areas:
+        "a a "
+        "a a ";
+    gap: 10px;
+}
+
+.ahli .ikon .aset-ikon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ahli .ikon .aset-ikon a i {
+    color: rgb(54, 151, 211);
+    font-size: 50px;
+}
+
+.ahli .ikon .aset-ikon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    background-color: white;
+    height: 150px;
+    border-radius: 20px;
+    transition: 0.5s;
+    border: 3px solid rgb(17, 109, 167, 0);
+}
+
+.ahli .ikon a:hover {
+    border: 3px solid rgb(17, 109, 167);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.ahli .ikon p {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.slide-buttons2 {
+    display: flex;
+    margin: 0px 0px 20px auto;
+    justify-content: end;
+    gap: 5px;
+}
+
+.slide-button2 {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.slide-buttons2 button {
+    background-color: rgb(247, 248, 249);
+    border: 1px solid rgb(17, 109, 167, 0);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: rgb(54, 151, 211);
+}
+
+.slide-buttons2 button:hover {
+    border: 1px solid rgb(17, 109, 167);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.pembungkus-mentor {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    max-width: none;
+    overflow-x: scroll;
+    white-space: normal;
+    position: relative;
+}
+
+.pembungkus-mentor::-webkit-scrollbar {
+    width: 0;
+    height: 8px; /* Sesuaikan dengan lebar scrollbar yang Anda inginkan */
+}
+
+.pembungkus-mentor::-webkit-scrollbar-thumb {
+    background: transparent; /* Menghilangkan warna latar belakang thumb scrollbar */
+}
+
+.pembungkus-mentor .kotak {
+    /* flex-basis: 32%; */
+    border: 1px solid rgba(100, 100, 111, 0.2);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.3s;
+    background-color: rgb(247, 248, 249);
+    flex: 0 0 400px;
+    max-width: 100%;
+}
+
+.pembungkus-mentor .kotak:hover {
+    border: 1px solid rgb(0, 139, 254);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.pembungkus-mentor a:hover {
+    background-color: rgb(54, 151, 211);
+}
+
+.pembungkus-mentor .kotak-deskripsi {
+    color: rgb(91, 91, 91);
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+.pembungkus-mentor .kotak .kotak-atas {
+    display: flex;
+    flex-direction: row;
+}
+
+.pembungkus-mentor .kotak .kotak-atas img {
+    min-width: 120px;
+    width: 120px;
+    height: 120px;
+    min-height: 120px;
+    object-fit: cover;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.pembungkus-mentor .text-kotak {
+    color: rgb(91, 91, 91);
+}
+
+.pembungkus-mentor .text-kotak h2 {
+    font-size: 25px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.pembungkus-mentor .text-kotak p {
+    margin-bottom: 5px;
+    text-align: left;
+}
+.pembungkus-mentor .kotak .medsos-mentor {
+    width: 100%;
+    padding: 0px;
+    background-color: rgb(247, 248, 249);
+    box-shadow: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: auto auto 0px auto;
+}
+
+.pembungkus-mentor .kotak .medsos-mentor a {
+    text-align: center;
+
+    background-color: rgb(247, 248, 249);
+    border-radius: 20px;
+    transition: 0.3s;
+    padding: 8px 0px;
+    width: 45%;
+    border: 1px solid rgba(100, 100, 111, 0.2);
+    color: rgb(91, 91, 91);
+    font-size: 13px;
+}
+
+.pembungkus-mentor .kotak .medsos-mentor a:hover {
+    border: 1px solid rgb(54, 151, 211);
+    color: rgb(54, 151, 211);
+}
+
+.pembungkus-mentor .kotak .medsos-mentor a i {
+    padding-right: 5px;
+}
+.profesi p {
+    font-size: 12px;
+    color: rgb(54, 151, 211);
+}
+
+.tooltip .tooltiptext {
+    visibility: visible;
+    background-color: rgba(244, 175, 27, 0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    justify-content: center;
+    font-size: 12px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.tooltip:hover .tooltiptext {
+    opacity: 1;
+}
+
+.kotak-deskripsi p {
+    font-size: 13px;
+    margin: 0px 10px 10px 10px;
+}
+
+.pembungkus-2 .kotak-2 {
+    flex-basis: 24%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    padding: 10px;
+    transition: 0.3s;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.pembungkus-2 .kotak-2:hover {
+    border: 2px solid rgba(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.pembungkus-2 .kotak-2 img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.pembungkus-2 .kotak-2 a:hover {
+    background-color: rgb(17, 109, 167);
+}
+
+/* artikel */
+.artikel .text h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* podcast */
+iframe {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* Carousel */
+
+.carousel {
+    position: relative;
+    width: 1209px;
+    margin: 100px auto 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    color: white;
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.8), rgba(173, 216, 230, 0.8));
+    padding: 50px;
+    border-radius: 5px;
+    padding-left: 100px;
+}
+
+.carousel-caption img  {
+    width: 170px;
+    padding-top: 200px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.carousel-control.prev {
+    left: 0;
+}
+
+.carousel-control.next {
+    right: 0;
+}
+
+

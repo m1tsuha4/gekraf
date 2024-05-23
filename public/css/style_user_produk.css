@@ -1,0 +1,23 @@
+.produk-tombol {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    gap: 10px;
+}
+.pembungkus-2 .kotak .produk-tombol a {
+    flex-basis: 50%;
+    color: white;
+    background-color: rgb(131, 146, 171);
+    width: 100%;
+}
+
+.pembungkus-2 .kotak .produk-tombol a button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    padding: auto;
+}

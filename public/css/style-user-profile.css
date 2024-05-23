@@ -1,0 +1,161 @@
+.tambahan-button {
+    margin-bottom: 20px;
+}
+
+.isi-form {
+    display: flex;
+    padding: 30px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 30px;
+    width: 75%;
+    gap: 50px;
+}
+
+.text_profile h1 {
+    color: rgb(91, 91, 91);
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+}
+
+.gambar-profile {
+    flex-basis: 30%;
+}
+
+.cover-gambar-profile {
+    background-color: white;
+    padding: 15px;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cover-gambar-profile img {
+    object-fit: cover;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.gambar-profile input {
+    width: 250px;
+    background-color: rgb(54, 151, 211);
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-top: 20px;
+
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+.gambar-profile input:hover {
+    background-color: rgb(26, 110, 161);
+}
+
+input[type="file"]::file-selector-button {
+    border-radius: 30px;
+    padding: 0 15px;
+    height: 30px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin-right: 16px;
+    transition: background-color 200ms;
+}
+
+/* file upload button hover state */
+input[type="file"]::file-selector-button:hover {
+    background-color: #e3e4e6;
+}
+
+/* file upload button active state */
+input[type="file"]::file-selector-button:active {
+    background-color: #e5e7eb;
+}
+
+.inputan {
+    flex-basis: 70%;
+}
+
+.inputan .baris {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputan .baris input {
+    border: 2px solid rgb(222, 222, 222);
+    padding: 8px 15px;
+    color: rgb(91, 91, 91);
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+}
+
+trix-editor {
+    border: 2px solid rgb(222, 222, 222);
+    padding: 8px 15px;
+    color: rgb(91, 91, 91);
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+}
+
+trix-toolbar[data-trix-button-group="file-tools"] {
+    display: none;
+}
+.sosial-media-profile {
+    display: flex;
+    width: 100%;
+
+    gap: 50px;
+}
+
+.sosial-media-profile .baris {
+    flex-basis: 50%;
+}
+
+.text-profile {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    font-size: 1em;
+}
+
+.text-profile a {
+    padding: 8px 20px;
+    background-color: rgb(161, 161, 161);
+    border-radius: 30px;
+    color: white;
+    transition: 0.3s;
+}
+
+.text-profile a:hover {
+    background-color: rgb(128, 126, 126);
+}
+
+.text-profile button {
+    border: none;
+    background-color: rgb(54, 151, 211);
+    border-radius: 30px;
+    padding: 8px 20px;
+    color: white;
+    font-size: 1em;
+    transition: 0.2s;
+}
+
+.baris select {
+    border: 2px solid rgb(222, 222, 222);
+    padding: 8px 15px;
+    color: rgb(91, 91, 91);
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+}
+
+.text-profile button:hover {
+    background-color: rgb(26, 110, 161);
+}
+
+.invalid-feedback {
+    color: red;
+    font-size: 0.8em;
+}

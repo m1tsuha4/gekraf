@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.tombol-utama-2 {
+    display: block;
+}
+
+.tombol-kanan {
+    float: right;
+}
+.tombol-tambahan {
+    display: none;
+}
+.tombol-tambahan-2 {
+    display: none;
+}
+.tombol-tengah {
+    margin: auto;
+    margin-top: 30px;
+    display: none;
+    padding-top: 30px;
+}
+
+.tombol-kanan-2 {
+    float: right;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.batas-kanan-kiri {
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.text {
+    flex-basis: 50%;
+    margin: 20px 0px auto auto;
+}
+
+.text h1 {
+    color: rgb(91, 91, 91);
+    letter-spacing: 0.8px;
+    font-size: 3em;
+}
+
+.text p {
+    color: rgb(91, 91, 91);
+    letter-spacing: 0.8px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.text a {
+    padding: 8px 18px;
+    background-color: rgb(244, 175, 27);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+.text a:hover {
+    background-color: rgb(17, 109, 167);
+}
+
+.atas {
+    padding-top: 100px;
+}
+
+.atas-25px {
+    padding-top: 25px;
+}
+
+.batas-atas-bawah {
+    margin: 30px 0px;
+}
+
+.bawah {
+    padding-bottom: 150px;
+}
+
+.kanan {
+    margin-right: 100px;
+}
+
+.kiri {
+    margin-left: 100px;
+}
+
+/* end-all */
+
+@media (max-width: 1075px) {
+    .kanan {
+        margin-right: 50px;
+    }
+
+    .kiri {
+        margin-left: 50px;
+    }
+    .batas-kanan-kiri {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+    .text h1 {
+        font-size: 2.5em;
+    }
+    .text p {
+        color: rgb(91, 91, 91);
+        letter-spacing: 0.8px;
+        margin-bottom: 20px;
+        font-size: 1em;
+        text-align: justify;
+        margin-top: 10px;
+    }
+    .text {
+        flex-basis: 50%;
+        margin: 0px 0px auto auto;
+    }
+}
+
+@media (max-width: 950px) {
+    .text h1 {
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    .text {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .text a {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+    .atas {
+        padding-top: 80px;
+    }
+
+    .bawah {
+        padding-bottom: 100px;
+    }
+    .tombol-kanan {
+        margin: 0;
+        float: right;
+    }
+}
+
+@media (max-width: 750px) {
+    .tombol-utama-2 {
+        display: none;
+    }
+    .tombol-tambahan-2 {
+        display: block;
+        margin-top: 40px;
+    }
+}
+@media (max-width: 500px) {
+    .kanan {
+        margin-right: 20px;
+    }
+
+    .kiri {
+        margin-left: 20px;
+    }
+    .batas-kanan-kiri {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .text h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+    .atas {
+        padding-top: 50px;
+    }
+
+    .bawah {
+        padding-bottom: 80px;
+    }
+    .tombol-tengah {
+        display: block;
+    }
+
+    .tombol-kanan-2 {
+        display: none;
+    }
+}

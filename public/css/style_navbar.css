@@ -1,0 +1,218 @@
+.navbar {
+    height: 70px;
+    width: 100%;
+    background-color: rgba(247, 248, 249, 0.8);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+.navbar .logo {
+    cursor: pointer;
+    float: left;
+    display: flex;
+    line-height: 70px;
+}
+
+.nav ul {
+    display: flex;
+    float: right;
+    line-height: 70px;
+}
+
+.nav ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.nav .a a {
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: #000000;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+.nav .a a.active {
+    color: rgb(255, 255, 255);
+    background-color: #0493C3;
+}
+
+.nav .a a:hover {
+    color: white;
+    background-color: #0493C3;
+}
+
+/* .nav ul li button {
+    background-color: rgb(133, 132, 132);
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px 18px;
+    border-radius: 30px;
+    border: none;
+}
+
+.nav ul li button:hover {
+    background-color: rgb(68, 68, 68);
+} */
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: rgb(54, 151, 211);
+    color: white;
+    padding: 7px 10px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.dropbtn img {
+    border-radius: 50%;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    border-radius: 0px 0px 15px 15px;
+}
+
+/* Links inside the dropdown */
+.dropdown .dropdown-content .dropdown-content-isi {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown .dropdown-content .dropdown-content-isi:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: rgb(244, 175, 27);
+}
+
+.dropdown .dropdown-content .dropdown-content-isi a {
+    color: rgb(54, 151, 211);
+    padding: 8px 15px;
+    border-radius: 30px;
+}
+
+.dropdown .dropdown-content .dropdown-content-isi a:hover {
+    background-color: rgb(244, 175, 27);
+    color: white;
+}
+
+.dropdown .dropdown-content .dropdown-content-isi button {
+    color: rgb(54, 151, 211);
+    padding: 8px 15px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown .dropdown-content .dropdown-content-isi button:hover {
+    background-color: rgb(244, 175, 27);
+    color: white;
+}
+
+body {
+    background-color: white;
+}
+
+.logo h3 {
+    color: rgb(54, 151, 211);
+    font-style: normal;
+    font-size: 1.8em;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo a {
+    padding: 8px;
+}
+
+.logo img {
+    width: 50px;
+    margin: auto;
+}
+
+label #dehaze,
+label #close {
+    line-height: 55px;
+    color: rgb(54, 151, 211);
+    cursor: pointer;
+    padding: 8px 0px;
+    font-size: 1.2em;
+
+    display: none;
+}
+
+label #dehaze:hover,
+label #close:hover {
+    color: rgb(244, 175, 27);
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 950px) {
+    .nav ul {
+        display: block;
+        height: 100vh;
+        line-height: 70px;
+        width: 100%;
+        text-align: center;
+        padding-top: 40px;
+        position: fixed;
+        top: 70px;
+        background-color: rgba(247, 248, 249, 0.9);
+        left: -100%;
+        transition: 0.5s;
+    }
+
+    label #dehaze {
+        display: flex;
+        float: right;
+    }
+
+    #check:checked ~ .nav ul {
+        left: 0;
+    }
+
+    #check:checked ~ label #dehaze {
+        display: none;
+    }
+
+    #check:checked ~ label #close {
+        display: block;
+        float: right;
+    }
+}

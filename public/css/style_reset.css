@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+#login {
+  background-color: #F0F4F9;
+  height: 100vh;
+}
+
+.loginForm {
+  background-color: #fff;
+  width: 80%;
+  border-radius: 20px;
+  padding: 96px;
+}
+
+.loginDesc img {
+  width: 100px;
+  height: 72px;
+}
+
+.loginDesc h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.loginDesc p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+#newPassword,
+#confirmPassword,
+#email {
+  padding: 0.7rem 0.75rem;
+  border: 1px solid #959595;
+  border-radius: 15px;
+}
+
+.btn-first {
+  padding: 0.7rem 0.75rem;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Responsive CSS */
+@media (max-width: 1200px) {
+  .loginForm {
+    width: 90%;
+    padding: 80px;
+  }
+  
+  .loginDesc h1 {
+    font-size: 24px;
+  }
+
+  .loginDesc p {
+    font-size: 14px;
+  }
+
+  .btn-first {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .loginForm {
+    width: 100%;
+    padding: 60px;
+  }
+  
+  .loginDesc {
+    text-align: center;
+  }
+
+  .loginDesc h1 {
+    font-size: 22px;
+  }
+
+  .loginDesc p {
+    font-size: 12px;
+  }
+
+  #newPassword,
+  #confirmPassword,
+  #email {
+    font-size: 14px;
+  }
+
+  .btn-first {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loginForm {
+    padding: 40px;
+  }
+  
+  .loginDesc h1 {
+    font-size: 20px;
+  }
+
+  .loginDesc p {
+    font-size: 12px;
+  }
+
+  #newPassword,
+  #confirmPassword,
+  #email {
+    font-size: 12px;
+  }
+
+  .btn-first {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .loginForm {
+    padding: 20px;
+  }
+  
+  .loginDesc img {
+    width: 80px;
+    height: 60px;
+  }
+
+  .loginDesc h1 {
+    font-size: 18px;
+  }
+
+  .loginDesc p {
+    font-size: 10px;
+  }
+
+  #newPassword,
+  #confirmPassword
+  #email {
+    font-size: 10px;
+  }
+
+  .btn-first {
+    font-size: 10px;
+  }
+}
+
+#daftar, #daftarAnggota {
+    background-color: #F0F4F9;
+    padding: 48px 0px;
+    height: auto;
+  }
+
+  .daftarForm {
+    background-color: #fff;
+    width: 90%;
+    
+    border-radius: 20px;
+    padding: 36px;
+  }
+
+.daftarHeader img {
+    width: 80px;
+    height: 58px;
+}
+
+.daftarHeader h1 {
+    margin-bottom: 0;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.textForm label::after {
+    content: "*";
+    color: red;
+}
+
+.checkboxContainer p {
+    font-size: 10px;
+    color: red;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-container .form-group {
+    margin-bottom: 15px;
+}
+.form-container .btn-primary {
+    display: block;
+    width: 100%;
+}
+.custom-file-upload {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+.custom-file-upload:hover {
+    border-color: #007bff;
+}
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+.custom-file-upload img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+.upload-icon {
+    font-size: 48px;
+    color: #007bff;
+}
+.upload-text {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    line-height: 18px;
+}
