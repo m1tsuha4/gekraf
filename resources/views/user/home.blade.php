@@ -4,7 +4,7 @@
     <div class="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('img/image 3.png') }}" alt="Image 1">
+                <img src="{{ asset('img/landingpage.png') }}" alt="Image 1">
                 <div class="carousel-caption">
                     <img class="insert-caption" src="{{ asset('img/Group 2.png') }}" alt="">
                     <h1 class="insert-caption" style="margin-top: 10px;">Membantu UMKM Lebih Maju</h1>
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/image 3.png') }}" alt="Image 2">
+                <img src="{{ asset('img/landingpage.png') }}" alt="Image 2">
                 <div class="carousel-caption">
                     <img src="{{ asset('img/Group 2.png') }}" alt="">
                     <h1 style="margin-top: 10px;">Membantu UMKM Lebih Maju</h1>
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/image 3.png') }}" alt="Image 3">
+                <img src="{{ asset('img/landingpage.png') }}" alt="Image 3">
                 <div class="carousel-caption">
                     <img src="{{ asset('img/Group 2.png') }}" alt="">
                     <h1 style="margin-top: 10px;">Membantu UMKM Lebih Maju</h1>
@@ -59,7 +59,7 @@
             </div>
         </div>
     </div>
-        <div class="artikel batas-kanan-kiri atas bawah">
+        <div class="artikel batas-kanan-kiri">
             <div class="text">
                 <h1>Acara Kami</h1>
             </div>
@@ -83,7 +83,7 @@
 
             </div>
             <div class="text" style="text-align: center; margin-top:50px">
-                <a href="">Selengkapnya</a>
+                <a href="/event">Selengkapnya</a>
             </div>
         </div>
 

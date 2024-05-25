@@ -159,13 +159,15 @@ body {
 #daftar, #daftarAnggota {
     background-color: #F0F4F9;
     padding: 48px 0px;
-    height: auto;
+    width: 100%;
+    min-height: 100vh;
   }
 
   .daftarForm {
     background-color: #fff;
-    width: 90%;
+    width: 70%;
     
+    margin-inline: auto;
     border-radius: 20px;
     padding: 36px;
   }

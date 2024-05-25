@@ -2,6 +2,7 @@
     background-color: rgb(54, 151, 211);
     width: 100%;
     border-radius: 25px 25px 0px 0px;
+    padding: 20px; /* Tambahkan padding ke footer */
 }
 
 .footer-kotak {
@@ -21,14 +22,17 @@
 .item1 {
     grid-area: item1;
     text-align: justify;
+    padding: 10px; /* Tambahkan padding ke item1 */
 }
 
 .item2 {
     grid-area: item2;
+    padding: 10px; /* Tambahkan padding ke item2 */
 }
 
 .item2 li {
     list-style: none;
+    margin-bottom: 10px; /* Tambahkan margin bawah untuk memberi jarak antar item */
 }
 
 .item2 li a {
@@ -42,6 +46,7 @@
 
 .item3 {
     grid-area: item3;
+    padding: 10px; /* Tambahkan padding ke item3 */
 }
 
 .item3-1 {
@@ -57,6 +62,13 @@
 .item3-2 a {
     color: white;
     transition: 0.3s;
+    display: flex; /* Tambahkan ini */
+    align-items: center; /* Tambahkan ini */
+    margin-bottom: 10px; /* Tambahkan margin bawah untuk memberi jarak antar link */
+}
+
+.item3-2 a i {
+    margin-right: 10px; /* Tambahkan jarak antara ikon dan teks */
 }
 
 .item3-2 a:hover {
@@ -104,7 +116,6 @@
 @media (max-width: 500px) {
     .footer-kotak {
         padding-top: 40px;
-
         width: auto;
     }
 }

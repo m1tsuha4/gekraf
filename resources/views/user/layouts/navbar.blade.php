@@ -1,4 +1,4 @@
-<div class="navbar ">
+<div class="navbar">
     <input type="checkbox" name="" value="" id="check">
     <label for="check">
         <i class="fa-solid fa-bars kanan" id="dehaze"></i>

@@ -1,0 +1,10 @@
+.image-profile {
+    max-width: 100%; /* Membuat gambar tidak melebihi lebar parent */
+    height: auto; /* Membuat gambar proporsional */
+    padding-top: 70px;
+  }
+  
+  .image-profile img {
+    width: 100%; /* Memastikan gambar mengisi seluruh lebar parent */
+    height: auto; /* Membuat gambar proporsional */
+  }

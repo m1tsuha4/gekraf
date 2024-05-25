@@ -11,6 +11,7 @@ use App\Http\Controllers\PariwisataController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -59,9 +60,7 @@ Route::get('/mentor',[MentorController::class,'index_user']);
 Route::get('/mentor-kategori/{id}',[MentorController::class,'show_user']);
 
 Route::middleware(['cekadmin'])->group(function(){
-    Route::get('/admin-dashboard',function(){
-        return view('dashboard.index');
-    });
+    Route::get('/admin-dashboard', [HomeController::class, 'dashboard']);
 
     // Route::resource('/admin-kategori', KategoriController::class);
     Route::post('/admin-kategori', [KategoriController::class, 'store']);

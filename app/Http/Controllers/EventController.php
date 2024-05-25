@@ -44,7 +44,7 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'judul' => 'required|string|max:50',
+            'judul' => 'required|string|max:150',
             'deskripsi' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'lokasi' => 'required',

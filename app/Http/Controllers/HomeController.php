@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Artikel;
+use App\Models\User;
 use App\Models\Event;
-use App\Models\Produk;
 use App\Models\Mentor;
-use App\Models\KategoriMentor;
+use App\Models\Produk;
+use App\Models\Artikel;
+use App\Models\DataGekraf;
 use App\Models\Pariwisata;
 use Illuminate\Http\Request;
+use App\Models\KategoriMentor;
 
 class HomeController extends Controller
 {
@@ -31,9 +33,9 @@ class HomeController extends Controller
     {
         $kategori_id1 = 1;
         $kategori_id2 = 2;
-        return view('user.home',[
-            'events'=>Event::latest()->paginate(6),
-            'pariwisatas'=>Pariwisata::latest()->paginate()
+        return view('user.home', [
+            'events' => Event::latest()->paginate(6),
+            'pariwisatas' => Pariwisata::latest()->paginate()
         ]);
     }
 
@@ -44,5 +46,18 @@ class HomeController extends Controller
     //     ],compact('mentor_all'));
     // }
 
+    public function dashboard()
+    {
+        $eventCount = Event::count();
+        $userCount = User::count();
+        $produkCount = Produk::count();
+        $dataGekrafCount = DataGekraf::count();
 
+        return view('dashboard.index', [
+            'eventCount' => $eventCount,
+            'userCount' => $userCount,
+            'produkCount' => $produkCount,
+            'dataGekrafCount' => $dataGekrafCount,
+        ]);
+    }
 }

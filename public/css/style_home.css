@@ -725,10 +725,10 @@ iframe {
 }
 
 /* Carousel */
-
 .carousel {
     position: relative;
-    width: 1209px;
+    width: 100%;
+    max-width: 1209px;
     margin: 100px auto 0 auto;
     overflow: hidden;
 }
@@ -757,13 +757,13 @@ iframe {
     width: 75%;
     height: 100%;
     color: white;
-    background: linear-gradient(135deg, rgba(0, 191, 255, 0.8), rgba(173, 216, 230, 0.8));
+ 
     padding: 50px;
     border-radius: 5px;
     padding-left: 100px;
 }
 
-.carousel-caption img  {
+.carousel-caption img {
     width: 170px;
     padding-top: 200px;
 }
@@ -772,7 +772,7 @@ iframe {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     color: white;
     border: none;
     padding: 10px;
@@ -781,11 +781,65 @@ iframe {
 }
 
 .carousel-control.prev {
-    left: 0;
+    left: 20px;
 }
 
 .carousel-control.next {
-    right: 0;
+    right: 20px;
 }
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .carousel-caption {
+        width: 80%;
+        padding: 40px;
+        padding-left: 80px;
+        font-size: 16px; /* tambahkan sesuai kebutuhan */
+    }
+    .carousel-caption img {
+        width: 150px;
+        padding-top: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    .carousel-caption {
+        width: 85%;
+        padding: 30px;
+        padding-left: 60px;
+        font-size: 14px; /* tambahkan sesuai kebutuhan */
+    }
+    .carousel-caption img {
+        width: 130px;
+        padding-top: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        width: 90%;
+        padding: 20px;
+        padding-left: 40px;
+        font-size: 12px; /* tambahkan sesuai kebutuhan */
+    }
+    .carousel-caption img {
+        width: 110px;
+        padding-top: 15%;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-caption {
+        width: 95%;
+        padding: 10px;
+        padding-left: 20px;
+        font-size: 10px; /* tambahkan sesuai kebutuhan */
+    }
+    .carousel-caption img {
+        width: 90px;
+        padding-top: 0%;
+    }
+}
+
 
 

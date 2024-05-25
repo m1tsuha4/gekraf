@@ -2,30 +2,32 @@
     <div class="footer-kotak  batas-kanan-kiri">
         <div class="item1">
             <h2>Gekraf Sumbar</h2>
-            <p>Senang sekali jika anda ingin bekerja sama dengan kami.
-                kami harap dapat membantu dan mewujudkan keinginan anda
+            <p>Gerakan Ekonomi Kreatif Nasional (Gekrafs) adalah sebuah organisasi komunitas dalam bidang pengembangan ekosistem ekonomi kreatif di Indonesia. Gekrafs digagas oleh Kawendra Lukistian, Sandiaga Uno, Erwin Soerjadi, Yanti Adeni, Laja Lapian, Ardian Perdana Putra dan beberapa pelaku industri kreatif lainnya di Jakarta pada 22 Januari 2019.
             </p>
         </div>
         <div class="item2">
             <h2>Layanan</h2>
             <ul>
                 <li>
-                    <a href="">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="">Profile</a>
+                    <a href="/profile-home">Profile</a>
                 </li>
                 <li>
-                    <a href="">Showcase</a>
+                    <a href="/market">Showcase</a>
                 </li>
                 <li>
-                    <a href="">Market</a>
+                    <a href="/artikel">Artikel</a>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <a href="/event">Event</a>
                 </li>
                 <li>
-                    <a href="">Login</a>
+                    <a href="/contact">Contact</a>
+                </li>
+                <li>
+                    <a href="/login">Login</a>
                 </li>
 
             </ul>
@@ -39,15 +41,11 @@
                     <a href=""><i class="fa-brands fa-instagram"></i> @gekrafs.sumbar</a>
                     <a href=""><i class="fa-solid fa-location-dot"></i> DPW Gekraf Sumbar</a>
                 </div>
-{{--                <div class="item3-2">--}}
-{{--                    <a href=""><i class="fa-brands fa-instagram"></i> @gekrafs.sumba</a>--}}
-{{--                    <a href=""><i class="fa-solid fa-location-dot"></i> DPW Gekraf Sumbar</a>--}}
-{{--                </div>--}}
             </div>
         </div>
     </div>
     <hr>
     <div class="copyright">
-        <p>2024 @gekrafs.sumbar</p>
+        <p>Copyright 2024 GEKRAFS SUMBAR. Powered By PT. Metro Indonesian Software</p>
     </div>
 </div>

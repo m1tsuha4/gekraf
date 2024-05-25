@@ -1,11 +1,13 @@
 @extends('user.layouts.index')
 @section('content')
-    <div class="artikel batas-kanan-kiri atas bawah" style="background-image: url('{{ asset('img/Intersect.png') }}');  background-position: center; padding-top: 100px;">
-        <div class="text">
-            <h1 style="color: white;">Gerakan Ekonomi Kreatif</h1>
-        </div>
+    <link rel="stylesheet" href="{{ asset('css/style_profile.css') }}">
+    <div class="image-profile">
+        <img src="{{ asset('img/home_profile.png') }}" alt="">
     </div>
     <div class="container">
+        {{-- <div class="container">
+            <img src="{{ asset('img/home_profile.png') }}" alt="">
+        </div> --}}
         <div class="about-us batas-kanan-kiri atas bawah">
             <div class="gambar">
                 <div class="cover-gambar">
