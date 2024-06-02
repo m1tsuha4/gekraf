@@ -16,12 +16,22 @@ class KategoriSeeder extends Seeder
     public function run()
     {
         DB::table('kategoris')->insert([
-            ['nama_kategori'=>'Makanan'],
-            ['nama_kategori'=>'Minuman'],
-            ['nama_kategori'=>'Busana'],
-            ['nama_kategori'=>'Kerajinan'],
-            ['nama_kategori'=>'Mainan'],
-            ['nama_kategori'=>'Elektronik'],
+            ['nama_kategori'=>'Aplikasi'],
+            ['nama_kategori'=>'Desain Produk'],
+            ['nama_kategori'=>'Kriya'],
+            ['nama_kategori'=>'Periklanan'],
+            ['nama_kategori'=>'Pengembangan Permainan'],
+            ['nama_kategori'=>'Fashion'],
+            ['nama_kategori'=>'Fotografi'],
+            ['nama_kategori'=>'Seni Pertunjukkan'],
+            ['nama_kategori'=>'Arsitektur'],
+            ['nama_kategori'=>'Film, Animasi, Video'],
+            ['nama_kategori'=>'Musik'],
+            ['nama_kategori'=>'Seni Rupa'],
+            ['nama_kategori'=>'Desain Komunikasi Visual'],
+            ['nama_kategori'=>'Penerbitan'],
+            ['nama_kategori'=>'Kuliner'],
+            ['nama_kategori'=>'Televisi dan Radio'],
         ]);
     }
 }

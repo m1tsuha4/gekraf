@@ -11,6 +11,7 @@
     </style>
     <div class="container">
         <div id="toast-container" class="toast-top-right"></div>
+        <a href="/user-produk/create" class="btn btn-success">Tambah Produk</a>
         <h3 style="color: white">List Produk</h3>
 
         <div class="card p-3 mb-3" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
@@ -23,8 +24,7 @@
                             <th>Nama Produk</th>
                             <th>Owner</th>
                             <th>Kategori</th>
-                            <th>Lihat</th>
-                            <th>Hapus</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
@@ -32,7 +32,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td class="">
-                                    <img src="{{ asset('storage/' . $item->image) }}"
+                                    <img src="{{ asset('storage/produk/' . $item->image) }}"
                                         style="width: 70px;height:70px;margin:0;object-fit: cover;" alt="">
                                 </td>
                                 <td>{{ Str::limit($item->nama_produk, 20, '...') }}</td>
@@ -40,16 +40,25 @@
                                 <td>{{ $item->kategori->nama_kategori }}</td>
 
                                 <td>
-                                    <div class="row">
+                                    <div class="row">                                    
                                         <div class="col">
-                                            <button class="btn btn-secondary btn-sm" data-bs-toggle="modal"
-                                                data-bs-target="#showmodal{{ $item->id }}">Lihat</button>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#showmodal{{ $item->id }}"><i class="fa-solid fa-eye"></i></a>
+                                            <a href="/user-produk/{{ $item->id }}/edit"><i class="fa-solid fa-pen"></i></a>
+                                            <!-- Tautan untuk menghapus -->
+                                            <a href="javascript:void(0);" onclick="if(confirm('Hapus {{ $item->nama_produk }}?')) { event.preventDefault(); document.getElementById('delete-form-{{ $item->id }}').submit(); }">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </a>
+                                            <!-- Form untuk menghapus (disediakan tetapi disembunyikan) -->
+                                            <form id="delete-form-{{ $item->id }}" action="/admin-produk/{{ $item->id }}" method="post" style="display: none;">
+                                                @csrf
+                                                @method('delete')
+                                            </form>
                                         </div>
-
                                     </div>
+                                    
 
                                 </td>
-                                <td>
+                                {{-- <td>
                                     <div class="col">
                                         <form id="hapus" action="/admin-produk/{{ $item->id }}" method="post">
                                             @csrf
@@ -59,7 +68,7 @@
                                                 class="btn btn-danger btn-sm">Hapus</button>
                                         </form>
                                     </div>
-                                </td>
+                                </td> --}}
                             </tr>
                         @endforeach
                     </tbody>
@@ -88,7 +97,7 @@
 
 
                             <div class="d-flex " style="justify-content: center;">
-                                <img src="{{ asset('storage/' . $item->image) }}"
+                                <img src="{{ asset('storage/produk/' . $item->image) }}"
                                     style="height: 300px;object-fit: cover; width:250px;"
                                     class="img-preview  rounded border border-5 border-white shadow"alt="">
                             </div>

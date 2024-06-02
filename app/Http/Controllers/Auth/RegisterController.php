@@ -57,13 +57,20 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'whatsapp' =>['required','min:9','max:15'],
+            'nik' => ['required', 'string', 'unique:data_umkms'],
+            'nib' => ['required', 'string', 'unique:data_umkms'],
+            'id_kota' => ['required'],
             'nama_usaha' => ['required', 'string'],
-            'alamat' => ['required', 'string'],
+            'alamat_usaha' => ['required', 'string'],
+            'alamat_pemilik' => ['required', 'string'],
             'produk_usaha' => ['required', 'string'],
             'sub_sektor' => ['required', 'array'],
             'deskripsi' => ['required'],
+            'alamat_pemilik' => ['required', 'string'],
+            'klasifikasi' => ['required', 'string'],
             'instagram' => ['required', 'string'],
             'facebook' => ['required', 'string'],
+            'role'  => ['required']
             // 'image'=>['image','mimes:jpeg,png,jpg,gif,svg','max:2048']
         ]);
 
@@ -86,6 +93,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'whatsapp' => $data['whatsapp'],
+            'role' => $data['role']
             // 'image' => $data['image'],
         ]);
     
@@ -93,10 +101,15 @@ class RegisterController extends Controller
         DataUmkm::create([
             'user_id' => $user->id,
             'nama_usaha' => $data['nama_usaha'],
-            'alamat' => $data['alamat'],
+            'nik' => $data['nik'],
+            'alamat_usaha' => $data['alamat_usaha'],
+            'alamat_pemilik' => $data['alamat_pemilik'],
             'produk_usaha' => $data['produk_usaha'],
             'sub_sektor' => json_encode($data['sub_sektor']),
+            'klasifikasi' => $data['klasifikasi'],
+            'nib' => $data['nib'],
             'deskripsi' => $data['deskripsi'],
+            'id_kota' => $data['id_kota'],
             'instagram' => $data['instagram'],
             'facebook' => $data['facebook'],
         ]);

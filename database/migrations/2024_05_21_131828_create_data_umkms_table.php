@@ -17,10 +17,15 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('nama_usaha');
-            $table->string('alamat');
+            $table->string('nik')->unique();
+            $table->string('alamat_usaha');
+            $table->string('alamat_pemilik');
             $table->string('produk_usaha');
             $table->string('sub_sektor');
+            $table->string('klasifikasi');
+            $table->string('nib')->unique();
             $table->text('deskripsi');
+            $table->foreignId('id_kota')->constrained('kotas')->onDelete('cascade');
             $table->string('instagram');
             $table->string('facebook');
             $table->timestamps();

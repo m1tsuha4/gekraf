@@ -52,10 +52,12 @@ Route::post('/daftar-akun',[DataUmkmController::class,'store'])->name('daftarAku
 Route::get('/market',[MarketController::class,'index']);
 Route::get('/market-kategori/{kategori}',[MarketController::class,'show']);
 Route::get('/market/detail-produk/{id}',[MarketController::class,'detail_produk']);
+Route::get('/market-city/{id}', [MarketController::class, 'filterByCity']);
 Route::get('/profile-home',function(){return view('user.profile.home');});
 Route::get('/contact',function(){return view('user.contact.index');});
 Route::get('/artikel',[ArtikelController::class,'index_user']);
 Route::get('/event',[EventController::class,'index_user']);
+Route::get('/pariwisata',[PariwisataController::class,'index_user']);
 Route::get('/mentor',[MentorController::class,'index_user']);
 Route::get('/mentor-kategori/{id}',[MentorController::class,'show_user']);
 
@@ -111,6 +113,10 @@ Route::middleware(['cekadmin'])->group(function(){
     // Anggota Gekraf
     Route::get('/admin-dataAnggota',[DataGekrafController::class,'show']);
     Route::delete('/admin-dataAnggota/{id}',[DataGekrafController::class,'destroy']);
+
+    // Anggota UMKM
+    Route::get('/admin-dataUmkm',[DataUmkmController::class,'show']);
+    Route::delete('/admin-dataUmkm/{id}',[DataUmkmController::class,'destroy']);
 });
 
 
@@ -127,5 +133,8 @@ Route::middleware(['auth'])->group (function(){
     Route::get('/user-profile',[UserController::class,'index_user']);
     // Route::get('/user-profile/{id}/edit',[UserController::class,'edit_user']);
     Route::put('/user-profile/{user}',[UserController::class,'update_user']);
+
+    // Pariwisata
+    Route::resource('/user-pariwisata',PariwisataController::class);
 });
 

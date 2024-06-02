@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
-
 use App\Models\Kategori;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProdukController extends Controller
 {
@@ -32,8 +32,15 @@ class ProdukController extends Controller
      */
     public function create()
     {
+        if(Auth()->user()->is_admin == 1){
+            return view('dashboard.produk.create',[
+                'kategoris'=>Kategori::all(),
+                'kotas' => DB::table("kotas")->get()
+            ]);
+        }
         return view('user.produk.user_produk_create',[
-            'kategoris'=>Kategori::all()
+            'kategoris'=>Kategori::all(),
+            'kotas' => DB::table("kotas")->get()
         ]);
     }
 
@@ -48,15 +55,19 @@ class ProdukController extends Controller
 
 
         $validatedData = $request->validate([
-            'nama_produk'=>'required|max:50',
+            'nama_produk'=>'required',
+            'jenis_produk'=>'required',
             'deskripsi_produk'=>'required',
             'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'harga'=>'required',
             'whatsapp'=>'required|max:15',
             'instagram'=>'',
             'email'=>'required',
             'alamat'=>'required',
             'user_id'=>'required',
-            'kategori_id'=>'required'
+            'id_kota'=>'required',
+            'kategori_id'=>'required',
+            'pdf' => 'mimes:pdf|max:2048'
         ]);
 
         if($request->file('image')){
@@ -65,11 +76,20 @@ class ProdukController extends Controller
             $file->storeAs('public/produk', $fileName);
             $validatedData['image'] = $fileName;
         }
+        if($request->file('pdf')){
+            $file = $request->file('pdf');
+            $fileName = $file->hashName();
+            $file->storeAs('public/produk/pdf', $fileName);
+            $validatedData['pdf'] = $fileName;
+        }
 
         $validatedData['excerpt']= Str::limit(strip_tags($request->deskripsi_produk), 30, '...');
 
         Produk::create($validatedData);
         Alert::toast('Tambah produk berhasil','success');
+        if(Auth()->user()->is_admin == 1){
+            return redirect('/admin-produk');
+        }
         return redirect('/user-produk');
 
     }
@@ -93,10 +113,19 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
+        if(Auth()->user()->is_admin == 1){
+            return view('dashboard.produk.edit',[
+                'kategoris'=>Kategori::all(),
+                'produks'=>Produk::find($id),
+                'kotas' => DB::table("kotas")->get()
+            ]);
+        }
         return view('user.produk.user_produk_edit',[
             'kategoris'=>Kategori::all(),
-            'produks'=>Produk::find($id)
+            'produks'=>Produk::find($id),
+            'kotas' => DB::table("kotas")->get()
         ]);
+
     }
 
     /**
@@ -109,30 +138,45 @@ class ProdukController extends Controller
     public function update(Request $request,$id)
     {
         $validatedData = $request->validate([
-            'nama_produk'=>'required|max:50',
+            'nama_produk'=>'required',
+            'jenis_produk'=>'required',
             'deskripsi_produk'=>'required',
             'image'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'harga'=>'required',
             'whatsapp'=>'required|max:15',
             'instagram'=>'',
             'email'=>'required',
             'alamat'=>'required',
             'user_id'=>'required',
-            'kategori_id'=>'required'
+            'id_kota'=>'required',
+            'kategori_id'=>'required',
+            'pdf' => 'mimes:pdf|max:2048'
         ]);
 
-        
+        $cek = Produk::find($id);
+
         if ($request->file('image')) {
-            $cek = Produk::find($id);
             $cek_gambar = $cek->image;
             if ($cek_gambar) {
                 Storage::delete('public/produk/' . $cek_gambar);
             }
-
+            
             $file = $request->file('image');
             $fileName = $file->hashName();
             $file->storeAs('public/produk', $fileName);
             $validatedData['image'] = $fileName;
-        } else {
+        } elseif($request->file('pdf')) {
+            $cek_pdf = $cek->pdf;
+            if($cek_pdf){
+                Storage::delete('public/produk/pdf' . $cek_pdf);
+            }
+            $file = $request->file('pdf');
+            $fileName = $file->hashName();
+            $file->storeAs('public/produk/pdf', $fileName);
+            $validatedData['pdf'] = $fileName;
+        }
+        
+        else {
             unset($validatedData['image']);
         }
   
@@ -140,6 +184,9 @@ class ProdukController extends Controller
 
         Produk::where('id',$id)->update($validatedData);
         Alert::toast('Edit produk berhasil','success');
+        if(Auth()->user()->is_admin == 1){
+            return redirect('/admin-produk');
+        }
         return redirect('/user-produk');
     }
 
@@ -156,6 +203,10 @@ class ProdukController extends Controller
             $cek_gambar = $cek->image;
             if($cek_gambar){
                 Storage::delete('public/produk/' . $cek_gambar);
+                $cek_pdf = $cek->pdf;
+                if($cek_pdf){
+                    Storage::delete('public/produk/pdf' . $cek_pdf);
+                }
             }
             Produk::destroy($id);
             Alert::toast('Berhasil Hapus Data', 'success');

@@ -18,15 +18,18 @@ return new class extends Migration
             $table->timestamps();
             $table->string('image');
             $table->string('nama_produk');
+            $table->string('jenis_produk');
             $table->text('deskripsi_produk');
+            $table->string('harga');
             $table->string('excerpt');
             $table->foreignId('kategori_id')->constrained()->onDelete('cascade');
- 
+            $table->foreignId('id_kota')->constrained('kotas')->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('whatsapp');
             $table->string('instagram')->nullable();
             $table->string('email')->nullable();
             $table->string('alamat')->nullable();
+            $table->string('pdf')->nullable();
         });
     }
 

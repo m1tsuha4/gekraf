@@ -40,8 +40,6 @@
         <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
         <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
     </div>
-    
-    
 
     <div class="container">
         <div class="about-us batas-kanan-kiri atas bawah">
@@ -55,90 +53,125 @@
                 <br>
                 <br>
                 <p>Gerakan Ekonomi Kreatif Nasional (GeKrafs) adalah sebuah organisasi komunitas dalam bidang pengembangan ekosistem ekonomi kreatif di Indonesia. GeKrafs digagas oleh Kawendra Lukistian, Sandiaga Uno, Erwin Soerjadi, Yanti Adeni, Laja Lapian, Ardian Perdana Putra dan beberapa pelaku industri kreatif lainnya di Jakarta pada 22 Januari 2019. </p>
-
             </div>
         </div>
     </div>
-        <div class="artikel batas-kanan-kiri">
-            <div class="text">
-                <h1>Acara Kami</h1>
-            </div>
-            <div class="pembungkus-2 " style="margin-top:50px">
-                @foreach ($events as $item)
-                    <div class="kotak">
-                        <img src="{{ asset('storage/events/'. $item->image) }}" alt="Event Image">
-                        <div class="text-kotak">
-                            <h2>{{ Str::limit($item->judul, 25, '...') }}</h2>
-                            <p>{{ $item->excerpt }}</p>
-                            <br>
-                            <p><i class="fa-solid fa-location-dot"></i>  {{ $item->lokasi }}</p>
-                            <p><i class="fa-regular fa-calendar"></i>  {{ $item->tanggal }}</p>
-                            <p><i class="fa-regular fa-clock"></i>  {{ $item->waktu }}</p>
-                        </div>
-{{--                            <a href="">Selengkapnya</a>--}}
 
-
+    <div class="artikel batas-kanan-kiri">
+        <div class="text">
+            <h1>Event</h1>
+        </div>
+        <div class="pembungkus-2" style="margin-top:50px">
+            @foreach ($events as $item)
+                <div class="kotak">
+                    <img src="{{ asset('storage/events/'. $item->image) }}" alt="Event Image">
+                    <div class="text-kotak">
+                        <h2>{{ Str::limit($item->judul, 25, '...') }}</h2>
+                        <p>{{ $item->excerpt }}</p>
+                        <br>
+                        <p><i class="fa-solid fa-location-dot"></i>  {{ $item->lokasi }}</p>
+                        <p><i class="fa-regular fa-calendar"></i>  {{ $item->tanggal }}</p>
+                        <p><i class="fa-regular fa-clock"></i>  {{ $item->waktu }}</p>
                     </div>
-                @endforeach
-
-            </div>
-            <div class="text" style="text-align: center; margin-top:50px">
-                <a href="/event">Selengkapnya</a>
-            </div>
+                </div>
+            @endforeach
         </div>
+        <div class="text" style="text-align: center; margin-top:50px">
+            <a href="/event">Selengkapnya</a>
+        </div>
+    </div>
 
-        <div class="artikel batas-kanan-kiri atas bawah">
-            <div class="text">
-                <h1>Pariwisata</h1>
-            </div>
-            <div class="pembungkus-2 " style="margin-top:50px">
-                @foreach ($pariwisatas as $item)
-                    <div class="kotak">
-                        <img src="{{ asset('storage/pariwisatas/'. $item->image) }}" alt="Event Image">
-                        <div class="text-kotak">
-                            <h2>{{ Str::limit($item->nama_objek, 25, '...') }}</h2>
-                            <p>{{ $item->keterangan }}</p>
-                            <br>
-                            <p><i class="fa-solid fa-location-dot"></i>  {{ $item->lokasi }}</p>
-                            
-                        </div>
-                        {{--                            <a href="">Selengkapnya</a>--}}
-
-
+    <div class="artikel batas-kanan-kiri atas">
+        <div class="text">
+            <h1>E - Journey</h1>
+        </div>
+        <div class="pembungkus-2" style="margin-top:50px">
+            @foreach ($pariwisatas as $item)
+                <div class="kotak">
+                    <img src="{{ asset('storage/pariwisatas/'. $item->image) }}" alt="Event Image">
+                    <div class="text-kotak">
+                        <h2>{{ ($item->nama_objek) }}</h2>
+                        <p>{{ Str::limit($item->keterangan, 100, '...') }}</p>
+                        <br>
+                        <p><i class="fa-solid fa-location-dot"></i>  {{ $item->lokasi }}</p>
+                        <p><i class="fa-brands fa-instagram"></i>  {{ $item->instagram }}</p>
                     </div>
-                @endforeach
+                </div>
+            @endforeach
+        </div>
+        <div class="text" style="text-align: center; margin-top:50px">
+            <a href="/pariwisata">Selengkapnya</a>
+        </div>
+    </div>
 
+    <!-- Our Partners Section -->
+    <div class="our-partners batas-kanan-kiri bawah">
+        <div class="text">
+            <h1>Our Partners</h1>
+        </div>
+        <div class="partners-logos" style="margin-top:50px">
+            <div class="partner-logo">
+                <img src="{{ asset('img/hipmi.png') }}" alt="Partner 1">
+            </div>
+            <div class="partner-logo">
+                <img src="{{ asset('img/kemenparekraf.png') }}" alt="Partner 2">
+            </div>
+            <div class="partner-logo">
+                <img src="{{ asset('img/knpi.png') }}" alt="Partner 3">
+            </div>
+            <div class="partner-logo">
+                <img src="{{ asset('img/pemko_padang.png') }}" alt="Partner 4">
             </div>
         </div>
-        <div class="location">
+    </div>
 
-        </div>
+    <div class="location"></div>
 
-        @include('user.layouts.footer')
+    @include('user.layouts.footer')
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            let currentSlide = 0;
-            const totalSlides = document.querySelectorAll('.carousel-item').length;
-        
-            function showSlide(index) {
-                const slides = document.querySelectorAll('.carousel-item');
-                currentSlide = (index + totalSlides) % totalSlides; // Menambahkan totalSlides untuk menangani nilai negatif
-                document.querySelector('.carousel-inner').style.transform = `translateX(${-currentSlide * 100}%)`;
-            }
-        
-            function nextSlide() {
-                showSlide(currentSlide + 1);
-            }
-        
-            function prevSlide() {
-                showSlide(currentSlide - 1);
-            }
-        
-            // Auto play carousel
-            setInterval(() => {
-                nextSlide();
-            }, 5000); // Ganti angka 5000 dengan durasi waktu yang diinginkan (dalam milidetik)
-        </script>
-        
-    @endsection
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let currentSlide = 0;
+        const totalSlides = document.querySelectorAll('.carousel-item').length;
+    
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-item');
+            currentSlide = (index + totalSlides) % totalSlides; // Menambahkan totalSlides untuk menangani nilai negatif
+            document.querySelector('.carousel-inner').style.transform = `translateX(${-currentSlide * 100}%)`;
+        }
+    
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+    
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+    
+        // Auto play carousel
+        setInterval(() => {
+            nextSlide();
+        }, 5000); // Ganti angka 5000 dengan durasi waktu yang diinginkan (dalam milidetik)
+    </script>
+
+    <style>
+        .our-partners {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        .partner-logo {
+            flex: 1 1 200px;
+            max-width: 100px;
+        }
+        .partner-logo img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+@endsection

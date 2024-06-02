@@ -15,13 +15,16 @@
                     <a href="/profile-home">Profile</a>
                 </li>
                 <li>
-                    <a href="/market">Showcase</a>
+                    <a href="/market">E - Gallery</a>
                 </li>
                 <li>
-                    <a href="/artikel">Artikel</a>
+                    <a href="/pariwisata">E - Journey</a>
                 </li>
                 <li>
                     <a href="/event">Event</a>
+                </li>
+                <li>
+                    <a href="/artikel">Article</a>
                 </li>
                 <li>
                     <a href="/contact">Contact</a>

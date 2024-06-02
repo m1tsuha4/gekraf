@@ -12,6 +12,9 @@ class Pariwisata extends Model
         'nama_objek',
         'keterangan',
         'image',
-        'lokasi'
+        'lokasi',
+        'instagram',
+        'latitude',
+        'longitude'
     ];
 }

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DataUmkm;
 use App\Models\DataGekraf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class DataUmkmController extends Controller
@@ -35,5 +38,30 @@ class DataUmkmController extends Controller
         DataGekraf::create($validatedData);
         Alert::toast('Selamat Anda Berhasil Terdaftar', 'success');
         return redirect()->route('home');
+    }
+
+    public function show()
+    {
+        $anggotas = DB::table('data_umkms')
+            ->join('kotas', 'data_umkms.id_kota', '=', 'kotas.id')
+            ->join('users','data_umkms.user_id', '=', 'users.id')
+            ->select('data_umkms.*','data_umkms.id as id_umkm','users.*', 'kotas.nama as nama_kota')
+            ->get();
+            // dd($anggotas);
+        return view('dashboard.umkm.index', [
+            'anggotas' => $anggotas
+        ]);
+    }
+
+    public function destroy($id) {
+        $cek = DataUmkm::find($id);
+        if ($cek) {
+            DataUmkm::destroy($id);
+            Alert::toast('Hapus Data Anggota Gekraf berhasil', 'success');
+        } else {
+            Alert::toast('Data Anggota Gekraf tidak ditemukan', 'error');
+        }
+
+        return redirect()->back();
     }
 }

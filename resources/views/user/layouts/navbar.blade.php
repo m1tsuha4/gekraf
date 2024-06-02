@@ -25,12 +25,12 @@
             </li>
             <li>
                 <div class="a ">
-                    <a href="/market" class="{{ Request::is('market*') ? 'active' : '' }}">Showcase</a>
+                    <a href="/market" class="{{ Request::is('market*') ? 'active' : '' }}">E - Gallery</a>
                 </div>
             </li>
             <li>
-                <div class="a">
-                    <a href="/artikel" class="{{ Request::is('artikel*') ? 'active' : '' }}">Artikel</a>
+                <div class="a ">
+                    <a href="/pariwisata" class="{{ Request::is('pariwisata*') ? 'active' : '' }}">E - Journey</a>
                 </div>
             </li>
             <li>
@@ -38,6 +38,11 @@
                     <a href="/event" class="{{ Request::is('event*') ? 'active' : '' }}">Event</a>
                 </div>
 
+            </li>
+            <li>
+                <div class="a">
+                    <a href="/artikel" class="{{ Request::is('artikel*') ? 'active' : '' }}">Article</a>
+                </div>
             </li>
             <li>
                 <div class="a">
@@ -68,10 +73,18 @@
                                 <a href="/user-profile"
                                     class="{{ Request::is('user-profile*') ? 'active' : '' }}">Profile</a>
                             </div>
+                            @if(Auth::user()->role == 'umkm')
                             <div class="dropdown-content-isi">
                                 <a href="/user-produk">Produk Anda
                                 </a>
                             </div>
+                            @endif
+                            @if(Auth::user()->role == 'pokdarwis')
+                            <div class="dropdown-content-isi">
+                                <a href="/user-pariwisata">E - Journey
+                                </a>
+                            </div>
+                            @endif
                             <div class="dropdown-content-isi">
 
                                 <form action="/logout" method="POST">

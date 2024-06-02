@@ -42,22 +42,30 @@ class LoginController extends Controller
 
     public function login(Request $request){
         $input = $request->all();
-        $this->validate($request,[
-            'email'=>'required|email',
-            'password'=>'required',
+        $loginField = filter_var($request->input('login'), FILTER_VALIDATE_EMAIL) ? 'email' : 'whatsapp';
+        
+        $this->validate($request, [
+            'login' => 'required',
+            'password' => 'required',
         ]);
-        if (auth()->attempt(array('email'=>$input['email'],'password'=>$input['password']))){
-            if(auth()->user()->is_admin == 1){
+        
+        $credentials = [
+            $loginField => $input['login'],
+            'password' => $input['password'],
+        ];
+        
+        if (auth()->attempt($credentials)) {
+            if (auth()->user()->is_admin == 1) {
                 Alert::success('Hore!', 'Selamat datang !');
                 return redirect('/admin-dashboard');
-            }else{
+            } else {
                 Alert::success('Berhasil Login', 'Selamat datang !');
-                return redirect('/user-produk');
+                return redirect('/user-profile');
             }
         }
-            Alert::toast('email atau password anda salah','error');
-            return redirect('login');
         
-
-    }
+        Alert::toast('Email atau password anda salah', 'error');
+        return redirect('login');
+    }    
+    
 }

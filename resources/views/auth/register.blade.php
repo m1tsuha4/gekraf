@@ -20,6 +20,32 @@
                             <div class="row textForm">
                                 <div class="col-md-6">
                                     <div class="mb-3">
+                                        <label for="namaPemilik" class="form-label">No.Identitas Pemilik (NIK)</label>
+                                        <input type="text" name="nik" class="form-control @error('nik') is-invalid @enderror" id="namaPemilik" value="{{ old('nik') }}" />
+                                        @error('nik')
+                                            <div class="invalid-feedback">
+                                                <strong>{{ $message }}</strong>
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="namaUsaha" class="form-label">NIB</label>
+                                        <input type="text" name="nib" class="form-control @error('nib') is-invalid @enderror" id="namaUsaha" value="{{ old('nib') }}" />
+                                        @error('nib')
+                                            <div class="invalid-feedback">
+                                                <strong>{{ $message }}</strong>
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row textForm">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
                                         <label for="namaPemilik" class="form-label">Nama Pemilik</label>
                                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="namaPemilik" value="{{ old('name') }}" />
                                         @error('name')
@@ -46,9 +72,9 @@
                             <div class="row textForm">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="alamat" class="form-label">Alamat</label>
-                                        <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="alamat" value="{{ old('alamat') }}" />
-                                        @error('alamat')
+                                        <label for="alamat" class="form-label">Alamat Pemilik</label>
+                                        <input type="text" name="alamat_pemilik" class="form-control @error('alamat_pemilik') is-invalid @enderror" id="alamat" value="{{ old('alamat_pemilik') }}" />
+                                        @error('alamat_pemilik')
                                             <div class="invalid-feedback">
                                                 <strong>{{ $message }}</strong>
                                             </div>
@@ -56,6 +82,36 @@
                                     </div>
                                 </div>
         
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="alamat" class="form-label">Alamat Usaha</label>
+                                        <input type="text" name="alamat_usaha" class="form-control @error('alamat_usaha') is-invalid @enderror" id="alamat" value="{{ old('alamat_usaha') }}" />
+                                        @error('alamat_usaha')
+                                            <div class="invalid-feedback">
+                                                <strong>{{ $message }}</strong>
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row textForm">
+                                <div class="col-md-6">
+                                    <label class="mb-2" for="asal">Kota</label>
+                                    <select id="asal" name="id_kota" class="form-select form-select mb-3 @error('id_kota') is-invalid @enderror" aria-label="Large select example">
+                                        <option selected>Open this select menu</option>
+                                        @foreach($kotas as $kota)
+                                            <option value="{{ $kota->id }}" {{ old('id_kota') == $kota->id ? 'selected' : '' }}>{{ $kota->nama }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('id_kota')
+                                        <div class="invalid-feedback">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
+                                </div>
+                                
+                                
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="produkUsaha" class="form-label">Produk Usaha</label>
@@ -68,7 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-        
+
                             <div class="row">
                                 <div class="col-md-12 checkboxContainer">
                                     <div class="row textForm">
@@ -298,10 +354,36 @@
                             </div>
         
                             <div class="row textForm">
-                                <div class="mb-3">
+                                {{-- <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" />
                                     @error('email')
+                                        <div class="invalid-feedback">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
+                                </div> --}}
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="nomorHp" class="form-label">Nomor Handphone</label>
+                                        <input type="number" name="whatsapp" class="form-control @error('whatsapp') is-invalid @enderror" id="nomorHp" value="{{ old('whatsapp') }}" />
+                                        @error('whatsapp')
+                                            <div class="invalid-feedback">
+                                                <strong>{{ $message }}</strong>
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                  
+                                <div class="col-md-6">
+                                    <label class="mb-2" for="klasifikasi">Klasifikasi UMKM by Omzet</label>
+                                    <select id="klasifikasi" name="klasifikasi" class="form-select form-select mb-3 @error('klasifikasi') is-invalid @enderror" aria-label="Large select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="mikro" {{ old('klasifikasi') }}>Mikro - ( Rp300Jt )</option>
+                                        <option value="kecil" {{ old('klasifikasi') }}>Kecil - ( Rp300Jt - Rp2.5M )</option>
+                                        <option value="menengah" {{ old('klasifikasi') }}>Menengah - ( Rp2.5M - Rp50M )</option>
+                                    </select>
+                                    @error('klasifikasi')
                                         <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
                                         </div>
@@ -335,12 +417,12 @@
                                 </div>
                             </div>
         
-                            <div class="row mb-5 textForm">
+                            <div class="row textForm">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="nomorHp" class="form-label">Nomor Handphone</label>
-                                        <input type="number" name="whatsapp" class="form-control @error('whatsapp') is-invalid @enderror" id="nomorHp" value="{{ old('whatsapp') }}" />
-                                        @error('whatsapp')
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="instagram" value="{{ old('email') }}" />
+                                        @error('email')
                                             <div class="invalid-feedback">
                                                 <strong>{{ $message }}</strong>
                                             </div>
@@ -359,7 +441,20 @@
                                     </div>
                                 </div>
                             </div>
-        
+                            <div class="row mb-3 textForm">
+                                <label class="mb-2" for="role">Daftar Sebagai</label>
+                                <select id="role" name="role" class="form-select form-select mb-3 @error('role') is-invalid @enderror" aria-label="Large select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="umkm" {{ old('role') }}>UMKM</option>
+                                    <option value="pokdarwis" {{ old('role') }}>Pokdarwis</option>
+                                </select>
+                                @error('role')
+                                    <div class="invalid-feedback">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
+                                
+                            </div>
                             <div class="row">
                                 <button type="submit" class="btn btn-primary btn-first">Selesai</button>
                             </div>

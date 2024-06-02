@@ -10,11 +10,17 @@ class DataUmkm extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
+        'nik',
         'nama_usaha',
-        'alamat',
+        'alamat_usaha',
+        'alamat_pemilik',
+        'nama_usaha',
         'produk_usaha',
         'sub_sektor',
+        'klasifikasi',
+        'nib',
         'deskripsi',
+        'id_kota',
         'instagram',
         'facebook'
     ];

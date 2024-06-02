@@ -55,7 +55,7 @@
                         </div>
                         <div class="baris">
 
-                            <label for="inputState" class="form-label">Kategori</label>
+                            <label for="inputState" class="form-label">Sub Sektor</label>
                             <select class="form-select" name="kategori_id">
                                 @foreach ($kategoris as $item)
                                     @if (old('kategori_id') == $item->id)
@@ -71,6 +71,53 @@
                                 @endforeach
                             </select>
 
+                        </div>
+                    </div>
+                    <div class="sosial-media-produk">
+                        <div class="baris">
+                            <label for="">Jenis Produk</label>
+                            <input type="text" name="jenis_produk" placeholder=""
+                                value="{{ old('jenis_produk') }}">
+                            @error('jenis_produk')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="baris">
+                            <label for="">Harga</label>
+                            <input type="text" name="harga" placeholder="50.000" value="{{ old('harga') }}">
+                            @error('harga')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="sosial-media-produk">
+                        <div class="baris">
+                            <label for="">File (NIB, PIRT, BPOM, Halal)</label>
+                            <input type="file" name="pdf" placeholder=""
+                                value="{{ old('pdf') }}">
+                            @error('pdf')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="baris">
+                            <label class="mb-2" for="asal">Kota</label>
+                            <select id="asal" name="id_kota" class="form-select form-select mb-3 @error('id_kota') is-invalid @enderror" aria-label="Large select example">
+                                <option selected>Open this select menu</option>
+                                @foreach($kotas as $kota)
+                                    <option value="{{ $kota->id }}" {{ old('id_kota') == $kota->id ? 'selected' : '' }}>{{ $kota->nama }}</option>
+                                @endforeach
+                            </select>
+                            @error('id_kota')
+                                <div class="invalid-feedback">
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="baris">

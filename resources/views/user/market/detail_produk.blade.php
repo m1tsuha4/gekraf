@@ -24,15 +24,26 @@
                 </div>
                 <div class="judul-detail-produk">
                     <h1>{{ $produks->nama_produk }} </h1>
-                    <p> Rp.20.000,00</p>
+                    <p> Rp.{{ $produks->harga }},00</p>
                 </div>
                 <hr>
                 <div class="deskripsi-detail-produk">
-                    <p class="text-tebal">Deskripsi :</p>
-                    <p>{!! $produks->deskripsi_produk !!}</p>
+                    <p class="text-tebal">Jenis Produk :</p>
+                    <p>{!! $produks->jenis_produk !!}</p>
                 </div>
+                <hr>
+                <div class="deskripsi-detail-produk">
+                    <p class="text-tebal">Deskripsi : </p>
+                    <p> {!! $produks->deskripsi_produk !!}</p>
+                </div>
+                <hr>
                 <div class="alamat-detail-produk">
-                    <p class="text-tebal">Alamat :</p>
+                    <p class="text-tebal">Kota : </p>
+                    <p>{{ $nama_kota->nama_kota }}</p>
+                </div>
+                <hr>
+                <div class="alamat-detail-produk">
+                    <p class="text-tebal">Alamat : </p>
                     <p>{{ $produks->alamat }}</p>
                 </div>
 

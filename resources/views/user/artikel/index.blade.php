@@ -6,8 +6,8 @@
     <div class="article">
         <h1>Artikel</h1>
     </div>
-    <div class="produk batas-kanan-kiri bawah atas">
-        <div class="pembungkus-2">
+    <div class="produk batas-kanan-kiri bawah">
+        <div class="pembungkus-2" style="margin-top:50px">
             @foreach ($artikels as $item)
                 <div class="kotak">
                     <img src="{{ asset('storage/articles/' . $item->image) }}" alt="">

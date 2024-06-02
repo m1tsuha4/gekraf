@@ -27,12 +27,10 @@
                     @enderror
                 </div>
 
-
                 <div class="inputan">
                     <div class="sosial-media-produk">
-
                         <div class="baris">
-                            <label for="">nama Produk</label>
+                            <label for="">Nama Produk</label>
                             <input type="text" name="nama_produk" placeholder="Sabun Sehat Sejati"
                                 value="{{ $produks->nama_produk }}">
                             @error('nama_produk')
@@ -42,8 +40,7 @@
                             @enderror
                         </div>
                         <div class="baris">
-
-                            <label for="inputState" class="form-label">Kategori Mentor</label>
+                            <label for="inputState" class="form-label">Sub Sektor</label>
                             <select class="form-select" name="kategori_id">
                                 @foreach ($kategoris as $item)
                                     @if ($produks->kategori_id == $item->id)
@@ -55,10 +52,68 @@
                                             {{ $item->nama_kategori }}
                                         </option>
                                     @endif
-                                    {{-- <p>{{ $item->nama_kategori }}</p> --}}
                                 @endforeach
                             </select>
-
+                        </div>
+                    </div>
+                    <div class="sosial-media-produk">
+                        <div class="baris">
+                            <label for="">Jenis Produk</label>
+                            <input type="text" name="jenis_produk" placeholder=""
+                                value="{{ $produks->jenis_produk }}">
+                            @error('jenis_produk')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="baris">
+                            <label for="">Harga</label>
+                            <input type="text" name="harga" placeholder="50.000" value="{{ $produks->harga }}">
+                            @error('harga')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="sosial-media-produk">
+                        <div class="baris">
+                            <label for="">File (NIB, PIRT, BPOM, Halal)</label>
+                            <br>
+                            <input type="file" name="pdf" class="form-control @error('pdf') is-invalid @enderror">
+                            @error('pdf')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                            @if ($produks->pdf)
+                            <div class="mt-2">
+                                <a href="{{ asset('storage/produk/pdf/' . $produks->pdf) }}" target="_blank">Lihat file yang sudah diunggah</a>
+                            </div>
+                        @endif
+                        </div>
+                        <div class="baris">
+                            <label class="mb-2" for="asal">Kota</label>
+                            <select id="asal" name="id_kota" class="form-select form-select mb-3 @error('id_kota') is-invalid @enderror" aria-label="Large select example">
+                                <option selected>Open this select menu</option>
+                                @foreach($kotas as $kota)
+                                    @if ($produks->id_kota == $kota->id)
+                                        <option value="{{ $kota->id }}" selected>
+                                            {{ $kota->nama }}
+                                        </option>
+                                    @else
+                                        <option value="{{ $kota->id }}">
+                                            {{ $kota->nama }}
+                                        </option>
+                                    @endif
+                                @endforeach
+                            </select>
+                            @error('id_kota')
+                                <div class="invalid-feedback">
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="baris">

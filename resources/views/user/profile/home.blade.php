@@ -8,7 +8,7 @@
         {{-- <div class="container">
             <img src="{{ asset('img/home_profile.png') }}" alt="">
         </div> --}}
-        <div class="about-us batas-kanan-kiri atas bawah">
+        <div class="about-us batas-kanan-kiri atas">
             <div class="gambar">
                 <div class="cover-gambar">
                     <img src="{{ asset('img/Intersect.png') }}" alt="">
@@ -20,6 +20,12 @@
                 <br>
                 <p>Gerakan Ekonomi Kreatif Nasional (GeKrafs) adalah sebuah organisasi komunitas dalam bidang pengembangan ekosistem ekonomi kreatif di Indonesia. GeKrafs digagas oleh Kawendra Lukistian, Sandiaga Uno, Erwin Soerjadi, Yanti Adeni, Laja Lapian, Ardian Perdana Putra dan beberapa pelaku industri kreatif lainnya di Jakarta pada 22 Januari 2019. </p>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="pdf-embed batas-kanan-kiri atas bawah">
+            <h3>SUSUNAN SK RESUFLE GEKRAFS SUMBAR</h3>
+            <embed src="{{ asset('img/sk.pdf') }}" type="application/pdf" width="100%" height="600px" />
         </div>
     </div>
 

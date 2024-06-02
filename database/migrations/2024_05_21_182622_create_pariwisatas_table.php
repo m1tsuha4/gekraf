@@ -19,6 +19,9 @@ return new class extends Migration
             $table->text('keterangan');
             $table->string('image');
             $table->string('lokasi');
+            $table->string('instagram');
+            $table->decimal('latitude', 10, 7)->nullable(); 
+            $table->decimal('longitude', 10, 7)->nullable();
             $table->timestamps();
         });
     }

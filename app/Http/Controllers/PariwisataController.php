@@ -18,7 +18,12 @@ class PariwisataController extends Controller
      */
     public function index()
     {
-        return view('dashboard.pariwisata.index',[
+        if(Auth()->user()->is_admin == 1){
+            return view('dashboard.pariwisata.index',[
+                'pariwisatas'=>Pariwisata::latest()->paginate()
+            ]);
+        }
+        return view('user.pariwisata.user',[
             'pariwisatas'=>Pariwisata::latest()->paginate()
         ]);
     }
@@ -30,7 +35,10 @@ class PariwisataController extends Controller
      */
     public function create()
     {
-        return view ('dashboard.pariwisata.create');
+        if(Auth()->user()->is_admin == 1){
+            return view ('dashboard.pariwisata.create');
+        }
+        return view ('user.pariwisata.create');
     }
 
     /**
@@ -46,20 +54,28 @@ class PariwisataController extends Controller
             'keterangan' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'lokasi' => 'required',
+            'instagram' => 'required',
+            'latitude' => 'required|numeric',
+            'longitude' => 'required|numeric',
         ]);
-
-
+    
         if ($request->file('image')) {
             $file = $request->file('image');
             $fileName = $file->hashName();
             $file->storeAs('public/pariwisatas', $fileName);
             $validatedData['image'] = $fileName;
         }
-
+    
         Pariwisata::create($validatedData);
         Alert::toast('Tambah Pariwisata berhasil', 'success');
-        return redirect()->route('admin-pariwisata.index');
+        if(Auth()->user()->is_admin == 1){
+            return redirect()->route('admin-pariwisata.index');
+        }
+        return view ('user.pariwisata.user',[
+            'pariwisatas'=>Pariwisata::latest()->paginate()
+        ]);
     }
+    
 
     /**
      * Display the specified resource.
@@ -80,7 +96,12 @@ class PariwisataController extends Controller
      */
     public function edit($id)
     {
-        return view('dashboard.pariwisata.edit',[
+        if(Auth()->user()->is_admin == 1){
+            return view('dashboard.pariwisata.edit',[
+                'pariwisatas'=>Pariwisata::find($id)
+            ]);
+        }
+        return view ('user.pariwisata.edit',[
             'pariwisatas'=>Pariwisata::find($id)
         ]);
     }
@@ -99,15 +120,18 @@ class PariwisataController extends Controller
             'keterangan' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'lokasi' => 'required',
+            'instagram' => 'required',
+            'latitude' => 'required|numeric',
+            'longitude' => 'required|numeric',
         ]);
-
+    
         if ($request->file('image')) {
-            $cek = Pariwisata::find($id);
-            $cek_gambar = $cek->image;
-            if ($cek_gambar) {
-                Storage::delete('public/pariwisatas/' . $cek_gambar);
+            $pariwisata = Pariwisata::findOrFail($id);
+            $existingImage = $pariwisata->image;
+            if ($existingImage) {
+                Storage::delete('public/pariwisatas/' . $existingImage);
             }
-
+    
             $file = $request->file('image');
             $fileName = $file->hashName();
             $file->storeAs('public/pariwisatas', $fileName);
@@ -115,10 +139,15 @@ class PariwisataController extends Controller
         } else {
             unset($validatedData['image']);
         }
-
+    
         Pariwisata::where('id', $id)->update($validatedData);
         Alert::toast('Update Pariwisata berhasil', 'success');
-        return redirect()->route('admin-pariwisata.index');
+        if(Auth()->user()->is_admin == 1){
+            return redirect()->route('admin-pariwisata.index');
+        }
+        return view ('user.pariwisata.user',[
+            'pariwisatas'=>Pariwisata::latest()->paginate()
+        ]);
     }
 
     /**

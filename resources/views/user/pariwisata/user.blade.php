@@ -4,28 +4,28 @@
     @include('sweetalert::alert')
     <div class="produk batas-kanan-kiri bawah atas">
         <div class="text ">
-            <h1 style="text-align: start">Produk Anda di Market UMKM</h1>
+            <h1 style="text-align: start">E - Journey</h1>
         </div>
         <div class="text tambahan-button" style="margin-bottom: 20px;">
-            <a href="/user-produk/create">Tambah Produk</a>
+            <a href="/user-pariwisata/create">Tambah Journey</a>
         </div>
         <div class="pembungkus-2 ">
-            @foreach ($produks as $item)
+            @foreach ($pariwisatas as $item)
                 <div class="kotak">
-                    <img src="{{ asset('storage/produk/' . $item->image) }}" alt="">
+                    <img src="{{ asset('storage/pariwisatas/' . $item->image) }}" alt="">
                     <div class="text-kotak">
-                        <h2>{{ Str::limit($item->nama_produk, 19, '...') }}</h2>
-                        <p>{!! $item->excerpt !!}</p>
+                        <h2>{{ ($item->nama_objek) }}</h2>
+                        <p>{{ Str::limit($item->keterangan, 100, '...') }}</p>
                     </div>
                     <div class="produk-tombol">
-                        <a class="" href="/user-produk/{{ $item->id }}/edit">
+                        <a class="" href="/user-pariwisata/{{ $item->id }}/edit">
                             <i class="fa-solid fa-pen"></i></a>
 
                         <a href="" style="background-color: rgb(245, 54, 92)">
-                            <form id="hapus" action="/user-produk/{{ $item->id }}" method="post">
+                            <form id="hapus" action="/user-pariwisata/{{ $item->id }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" onclick="return confirm('hapus {{ $item->nama_produk }} ?')"
+                                <button type="submit" onclick="return confirm('hapus {{ $item->nama_objek }} ?')"
                                     class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </a>
