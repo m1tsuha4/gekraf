@@ -35,7 +35,8 @@ class HomeController extends Controller
         $kategori_id2 = 2;
         return view('user.home', [
             'events' => Event::latest()->paginate(6),
-            'pariwisatas' => Pariwisata::latest()->paginate()
+            'pariwisatas' => Pariwisata::latest()->paginate(6),
+            'produks' => Produk::latest()->paginate(6),
         ]);
     }
 

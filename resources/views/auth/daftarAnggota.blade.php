@@ -48,9 +48,9 @@
                                         </div>
                                         <div class="row">
                                             <div class="mb-3">
-                                                <label for="nik" class="form-label">NIK (Nomor Induk Penduduk)</label>
-                                                <input type="text" name="nik" class="form-control @error('nik') is-invalid @enderror" id="nik" value="{{ old('nik') }}" />
-                                                @error('nik')
+                                                <label for="nik" class="form-label">Jabatan</label>
+                                                <input type="text" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" id="nik" value="{{ old('jabatan') }}" />
+                                                @error('jabatan')
                                                     <div class="invalid-feedback">
                                                         <strong>{{ $message }}</strong>
                                                     </div>
@@ -59,9 +59,25 @@
                                         </div>
                                         <div class="row">
                                             <div class="mb-3">
-                                                <label for="produkUsaha" class="form-label">Produk Usaha</label>
-                                                <input type="text" name="nama_usaha" class="form-control @error('nama_usaha') is-invalid @enderror" id="produkUsaha" value="{{ old('nama_usaha') }}" />
-                                                @error('nama_usaha')
+                                                <label for="nik" class="form-label">Alamat</label>
+                                                <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="nik" value="{{ old('alamat') }}" />
+                                                @error('alamat')
+                                                    <div class="invalid-feedback">
+                                                        <strong>{{ $message }}</strong>
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="mb-3">
+                                                <label class="mb-2" for="asal">Asal DPC</label>
+                                                <select id="asal" name="id_kota" class="form-select form-select mb-3 @error('id_kota') is-invalid @enderror" aria-label="Large select example">
+                                                    <option selected>Open this select menu</option>
+                                                    @foreach($kotas as $kota)
+                                                        <option value="{{ $kota->id }}" {{ old('id_kota') == $kota->id ? 'selected' : '' }}>{{ $kota->nama }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @error('id_kota')
                                                     <div class="invalid-feedback">
                                                         <strong>{{ $message }}</strong>
                                                     </div>
@@ -71,7 +87,7 @@
                                     </div>
                                 </div>
                                 <div class="row formText">
-                                    <div class="col-md-6">
+                                    {{-- <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="alamat" class="form-label">Alamat</label>
                                             <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="alamat" value="{{ old('alamat') }}" />
@@ -81,8 +97,8 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
+                                    </div> --}}
+                                    {{-- <div class="col-md-6">
                                         <label class="mb-2" for="asal">Asal DPC</label>
                                         <select id="asal" name="id_kota" class="form-select form-select mb-3 @error('id_kota') is-invalid @enderror" aria-label="Large select example">
                                             <option selected>Open this select menu</option>
@@ -95,7 +111,7 @@
                                                 <strong>{{ $message }}</strong>
                                             </div>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 checkboxContainer">

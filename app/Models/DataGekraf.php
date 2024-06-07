@@ -10,9 +10,8 @@ class DataGekraf extends Model
     use HasFactory;
     protected $fillable = [
         'nama',
-        'nik',
+        'jabatan',
         'alamat',
-        'nama_usaha',
         'id_kota',
         'sub_sektor',
         'image'

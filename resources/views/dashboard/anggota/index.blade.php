@@ -19,7 +19,7 @@
                         @endif
                         <div class="card-body p-3">
                             <p class="card-text" style="font-weight: bold;">{{ $item->nama }}</p>
-                            <p class="card-text">{{ $item->nik }}</p>
+                            <p class="card-text">{{ $item->jabatan }}</p>
                             <div class="d-flex " style="gap:3px;text-align:center;justify-content:center">
                                 <a href="#" class="btn btn-secondary btn-sm"
                                     style="padding: 8px 28px;margin:0px 0px 3px 0px;" data-bs-toggle="modal"
@@ -70,15 +70,15 @@
                                     disabled>
                                 <div class="row">
                                     <div class="col mt-3">
-                                        <label>NIK</label>
+                                        <label>Jabatan</label>
                                         <input class="form-control" type="text" name="email" id=""
-                                            value="{{ $item->nik }}" disabled>
+                                            value="{{ $item->jabatan }}" disabled>
                                     </div>
-                                    <div class="col mt-3">
+                                    {{-- <div class="col mt-3">
                                         <label>Usaha</label>
                                         <input class="form-control" type="text" name="" id=""
                                             value="{{ $item->nama_usaha }}" disabled>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="row">
                                     <label>Alamat</label>

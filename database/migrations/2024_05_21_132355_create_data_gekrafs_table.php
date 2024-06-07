@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::create('data_gekrafs', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('nik')->unique();
+            $table->string('jabatan');
             $table->string('alamat');
-            $table->string('nama_usaha');
             $table->foreignId('id_kota')->constrained('kotas')->onDelete('cascade');
             $table->string('sub_sektor');
             $table->string('image')->nullable();

@@ -10,7 +10,7 @@
                     <h1 class="insert-caption" style="margin-top: 10px;">Membantu UMKM Lebih Maju</h1>
                     <p class="insert-caption" style="margin-top: 10px;">Menyediakan berbagai kebutuhan untuk meningkatkan sumber daya manusia dan memajukan UMKM daerah agar bisa go internasional </p>
                     <div class="text" style="text-align: left; margin-top:50px">
-                        <a href="/daftar-anggota">Daftar Sekarang</a>
+                        {{-- <a href="/daftar-anggota">Daftar Sekarang</a> --}}
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     <h1 style="margin-top: 10px;">Membantu UMKM Lebih Maju</h1>
                     <p style="margin-top: 10px;">Menyediakan berbagai kebutuhan untuk meningkatkan sumber daya manusia dan memajukan UMKM daerah agar bisa go internasional </p>
                     <div class="text" style="text-align: left; margin-top:50px">
-                        <a href="/daftar-anggota">Daftar Sekarang</a>
+                        {{-- <a href="/daftar-anggota">Daftar Sekarang</a> --}}
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     <h1 style="margin-top: 10px;">Membantu UMKM Lebih Maju</h1>
                     <p style="margin-top: 10px;">Menyediakan berbagai kebutuhan untuk meningkatkan sumber daya manusia dan memajukan UMKM daerah agar bisa go internasional </p>
                     <div class="text" style="text-align: left; margin-top:50px">
-                        <a href="/daftar-anggota">Daftar Sekarang</a>
+                        {{-- <a href="/daftar-anggota">Daftar Sekarang</a> --}}
                     </div>
                 </div>
             </div>
@@ -54,6 +54,49 @@
                 <br>
                 <p>Gerakan Ekonomi Kreatif Nasional (GeKrafs) adalah sebuah organisasi komunitas dalam bidang pengembangan ekosistem ekonomi kreatif di Indonesia. GeKrafs digagas oleh Kawendra Lukistian, Sandiaga Uno, Erwin Soerjadi, Yanti Adeni, Laja Lapian, Ardian Perdana Putra dan beberapa pelaku industri kreatif lainnya di Jakarta pada 22 Januari 2019. </p>
             </div>
+        </div>
+    </div>
+
+    <div class="artikel batas-kanan-kiri atas">
+        <div class="text">
+            <h1>E - Gallery</h1>
+        </div>
+        <div class="pembungkus-2" style="margin-top:50px">
+            @foreach ($produks as $item)
+                <div class="kotak">
+                    <img src="{{ asset('storage/produk/'. $item->image) }}" alt="Event Image">
+                    <div class="text-kotak">
+                        <h2>{{ ($item->nama_produk) }}</h2>
+                        <p>{{ Str::limit($item->deskripsi_produk, 100, '...') }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        <div class="text" style="text-align: center; margin-top:50px">
+            <a href="/market">Selengkapnya</a>
+        </div>
+    </div>
+
+    <div class="artikel batas-kanan-kiri atas">
+        <div class="text">
+            <h1>E - Journey</h1>
+        </div>
+        <div class="pembungkus-2" style="margin-top:50px">
+            @foreach ($pariwisatas as $item)
+                <div class="kotak">
+                    <img src="{{ asset('storage/pariwisatas/'. $item->image) }}" alt="Event Image">
+                    <div class="text-kotak">
+                        <h2>{{ ($item->nama_objek) }}</h2>
+                        <p>{{ Str::limit($item->keterangan, 100, '...') }}</p>
+                        <br>
+                        <p><i class="fa-solid fa-location-dot"></i>  {{ $item->lokasi }}</p>
+                        <p><i class="fa-brands fa-instagram"></i>  {{ $item->instagram }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        <div class="text" style="text-align: center; margin-top:50px">
+            <a href="/pariwisata">Selengkapnya</a>
         </div>
     </div>
 
@@ -81,29 +124,6 @@
         </div>
     </div>
 
-    <div class="artikel batas-kanan-kiri atas">
-        <div class="text">
-            <h1>E - Journey</h1>
-        </div>
-        <div class="pembungkus-2" style="margin-top:50px">
-            @foreach ($pariwisatas as $item)
-                <div class="kotak">
-                    <img src="{{ asset('storage/pariwisatas/'. $item->image) }}" alt="Event Image">
-                    <div class="text-kotak">
-                        <h2>{{ ($item->nama_objek) }}</h2>
-                        <p>{{ Str::limit($item->keterangan, 100, '...') }}</p>
-                        <br>
-                        <p><i class="fa-solid fa-location-dot"></i>  {{ $item->lokasi }}</p>
-                        <p><i class="fa-brands fa-instagram"></i>  {{ $item->instagram }}</p>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        <div class="text" style="text-align: center; margin-top:50px">
-            <a href="/pariwisata">Selengkapnya</a>
-        </div>
-    </div>
-
     <!-- Our Partners Section -->
     <div class="our-partners batas-kanan-kiri bawah">
         <div class="text">
@@ -111,16 +131,16 @@
         </div>
         <div class="partners-logos" style="margin-top:50px">
             <div class="partner-logo">
-                <img src="{{ asset('img/hipmi.png') }}" alt="Partner 1">
+                <img src="{{ asset('img/kemenparekraf.png') }}" alt="Partner 1">
             </div>
             <div class="partner-logo">
-                <img src="{{ asset('img/kemenparekraf.png') }}" alt="Partner 2">
+                <img src="{{ asset('img/pemko_padang.png') }}" alt="Partner 2">
             </div>
             <div class="partner-logo">
-                <img src="{{ asset('img/knpi.png') }}" alt="Partner 3">
+                <img src="{{ asset('img/hipmi.png') }}" alt="Partner 3">
             </div>
             <div class="partner-logo">
-                <img src="{{ asset('img/pemko_padang.png') }}" alt="Partner 4">
+                <img src="{{ asset('img/knpi.png') }}" alt="Partner 4">
             </div>
         </div>
     </div>

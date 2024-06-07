@@ -22,10 +22,9 @@ class DataGekrafController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required|string|max:50',
-            'nik' => 'required',
+            'jabatan' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'alamat' => 'required',
-            'nama_usaha' => 'required',
             'sub_sektor' => 'required|array',
             'id_kota' => 'required'
         ]);
